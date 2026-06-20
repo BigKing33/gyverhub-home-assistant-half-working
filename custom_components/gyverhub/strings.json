@@ -1,0 +1,33 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "GyverHub Setup",
+        "description": "Configure the GyverHub integration. Make sure MQTT is configured first.",
+        "data": {
+          "prefix": "Network Prefix",
+          "update_interval": "Update Interval (seconds)"
+        },
+        "data_description": {
+          "prefix": "The MQTT prefix used by your GyverHub devices (e.g., MyDevices)",
+          "update_interval": "How often to refresh device data (0.1 to 10 seconds, default 0.5)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "MQTT integration is not configured. Please set up MQTT first.",
+      "invalid_prefix": "Invalid prefix. Please enter a valid prefix.",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This prefix is already configured"
+    }
+  },
+  "entity": {
+    "button": {
+      "gyverhub_button": {
+        "name": "{label}"
+      }
+    }
+  }
+}
