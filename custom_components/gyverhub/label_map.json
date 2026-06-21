@@ -1,0 +1,65 @@
+{
+  "button": {
+    "default": "Bouton",
+    "_0": "Bouton 1",
+    "_1": "Bouton 2",
+    "_2": "Bouton 3",
+    "_3": "Bouton 4"
+  },
+  "switch": {
+    "default": "Switch",
+    "_0": "Switch 1",
+    "_1": "Switch 2",
+    "_2": "Switch 3",
+    "_3": "Switch 4"
+  },
+  "led": {
+    "default": "LED",
+    "_0": "LED 1",
+    "_1": "LED 2",
+    "_2": "LED 3",
+    "_3": "LED 4"
+  },
+  "label": {
+    "default": "Label",
+    "_0": "Label 1",
+    "_1": "Label 2",
+    "_2": "Label 3",
+    "_3": "Label 4"
+  },
+  "input": {
+    "default": "Input",
+    "_0": "Input 1",
+    "_1": "Input 2",
+    "_2": "Input 3",
+    "_3": "Input 4"
+  },
+  "slider": {
+    "default": "Slider",
+    "_0": "Slider 1",
+    "_1": "Slider 2",
+    "_2": "Slider 3",
+    "_3": "Slider 4"
+  },
+  "gauge": {
+    "default": "Gauge",
+    "_0": "Gauge 1",
+    "_1": "Gauge 2",
+    "_2": "Gauge 3",
+    "_3": "Gauge 4"
+  },
+  "select": {
+    "default": "Select",
+    "_0": "Select 1",
+    "_1": "Select 2",
+    "_2": "Select 3",
+    "_3": "Select 4"
+  },
+  "color": {
+    "default": "Couleur",
+    "_0": "Couleur 1",
+    "_1": "Couleur 2",
+    "_2": "Couleur 3",
+    "_3": "Couleur 4"
+  }
+}

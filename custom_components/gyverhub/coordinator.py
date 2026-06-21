@@ -355,13 +355,33 @@ class GyverHubCoordinator:
             
             # Log individual widget IDs for debugging
             for slider in device.sliders:
-                _LOGGER.debug("Found slider: id=%s, label=%s, min=%s, max=%s", 
+                _LOGGER.debug("Found slider: id=%s, label=%s, min=%s, max=%s",
                              slider.id, slider.label, slider.min_value, slider.max_value)
             for switch in device.switches:
                 _LOGGER.debug("Found switch: id=%s, label=%s", switch.id, switch.label)
             for led in device.leds:
                 _LOGGER.debug("Found LED: id=%s, label=%s", led.id, led.label)
-            
+
+            # Enhanced logging for buttons and switches with labels
+            _LOGGER.info("=== Button Details ===")
+            for button in device.buttons:
+                _LOGGER.info(
+                    "Button: id='%s', label='%s', widget_type='%s', icon='%s'",
+                    button.id, button.label, button.widget_type, button.icon or "N/A"
+                )
+            _LOGGER.info("=== Switch Details ===")
+            for switch in device.switches:
+                _LOGGER.info(
+                    "Switch: id='%s', label='%s', widget_type='%s', icon='%s'",
+                    switch.id, switch.label, switch.widget_type, switch.icon or "N/A"
+                )
+            _LOGGER.info("=== LED Details ===")
+            for led in device.leds:
+                _LOGGER.info(
+                    "LED: id='%s', label='%s', widget_type='%s', icon='%s'",
+                    led.id, led.label, led.widget_type, led.icon or "N/A"
+                )
+
             # Signal that UI was updated
             async_dispatcher_send(
                 self.hass,

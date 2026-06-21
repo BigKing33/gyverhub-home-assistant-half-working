@@ -46,10 +46,38 @@ class BaseWidget:
     @classmethod
     def from_dict(cls, data: Dict) -> 'BaseWidget':
         """Create widget from UI JSON dictionary"""
+        widget_id = data.get("id", data.get("name", ""))
+        widget_label = data.get("label", data.get("text", ""))
+        widget_type = data.get("type", "")
+
+        # Generate default label if none provided
+        if not widget_label and widget_id:
+            # Remove type prefix from widget_id if present
+            # e.g., "button_0" -> "Bouton"
+            type_parts = widget_type.split("_")
+            if type_parts:
+                # Capitalize first letter of each type part
+                default_label = " ".join([part.capitalize() for part in type_parts])
+                widget_label = default_label
+                _LOGGER.debug(
+                    "Generated default label '%s' for widget id '%s' (no label/text found)",
+                    default_label,
+                    widget_id
+                )
+
+        # Debug logging
+        _LOGGER.info(
+            "Creating widget: type=%s, id='%s', label='%s', keys=%s",
+            widget_type,
+            widget_id,
+            widget_label,
+            list(data.keys())
+        )
+
         return cls(
-            id=data.get("id", data.get("name", "")),
-            widget_type=data.get("type", ""),
-            label=data.get("label", data.get("text", "")),
+            id=widget_id,
+            widget_type=widget_type,
+            label=widget_label,
             color=data.get("color", 0x2E8B57),
             icon=data.get("icon"),
             disabled=data.get("disable", False),

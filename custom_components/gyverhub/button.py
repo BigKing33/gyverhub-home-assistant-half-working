@@ -36,7 +36,15 @@ async def async_setup_entry(
         
         for button in device.buttons:
             unique_id = f"{device.unique_id}_{button.id}"
-            
+
+            # Debug log for button label extraction
+            _LOGGER.info(
+                "Processing button - ID: %s, Label: %s, ID from device: %s",
+                button.id,
+                button.label,
+                device.device_id
+            )
+
             if unique_id not in added_buttons:
                 added_buttons.add(unique_id)
                 new_entities.append(

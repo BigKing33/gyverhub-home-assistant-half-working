@@ -1,0 +1,9 @@
+# Activer les logs DEBUG pour GyverHub
+# Copiez ce fichier dans votre répertoire config Home Assistant
+# et renommez-le en `logger.yaml`
+
+default: warning
+logs:
+  gyverhub: debug
+  homeassistant.components.mqtt: debug
+  homeassistant.helpers.entity: debug
